@@ -1,0 +1,94 @@
+/* replace the aqua green background with something that matches your color scheme.*/
+
+
+/* NMJC Customization to hide the Assignments menu item */
+#assignments_menu_item{
+    display:none;
+}
+
+#header {
+  /*you can use .pngs with alpha transparency since you dont have to worry about IE6*/
+  background: url("header_bg.jpg?v1") repeat-x scroll left center transparent;
+}
+
+/*replace the "Canvas" logo with your school's*/
+#header-logo, #header.no-user #header-logo {
+  background: url("header_logo.png?v1") no-repeat scroll 0 0 transparent;
+  bottom: 10px;
+  height: 50px;
+  left: 6px;
+  width: 191px;
+}
+/* if you are going to replace the Canvas logo on the top left with your school's, 
+you should move a (smaller) Cavas logo to the right side of the header'*/
+#header-logo-secondary {
+  /* note, you should set up you webserver to set the right headers to cache these 
+     images you link to for a long time (eg: 1 year) and change the querystring 
+     (the part that says "?v1") to force users to download a new version if you 
+     change it, see: http://developer.yahoo.com/performance/rules.html#expires */
+  background: url("header_canvas_logo.png?v1") no-repeat scroll 0 0 transparent;
+  bottom: 11px;
+  height: 26px;
+  position: absolute;
+  right: 26px;
+  width: 135px;
+  display: block;
+}
+/*make room for the menu since my sample logo is bigger than default canvas logo*/
+#menu{ margin-left: 200px; }
+
+/*make the menu lettering white and make it go back to grey when you hover over*/
+.menu-item .menu-item-title, .menu-item .menu-item-no-drop { color: #FFFFFF; }
+.menu-item.hover .menu-item-title { color: #555555; }
+
+/*style the #identity (the thing that says "Ryan Shaw | inbox | profile | logout | (feedback)" in top right) */
+#identity { background-color: #737373; } /* #981E32 */
+#identity .user_name a{ color: #FBD533 !important; } /* #DC8894 */
+#identity a { color: #fff; }
+#identity #feedback_link{ border-color: #333; background-color: #333; }
+#identity .inbox a .unread-messages-count { background-color: #333; }
+#identity { background-image: none; }
+
+#modal-box {
+ background: url("login-bg.jpg?v1") no-repeat !important; 
+ color: #FBD533 !important; /* #FFCF00 !important; #8DC34B The color of the text on the login page */
+ /*height: 400px !important; Optional I changed the height of the original image which was 687x396 */
+}
+
+#flash_notice_message, #flash_error_message /* Changes the background color of the flash notice. This is what you see at the top of the page when you login. */
+{ 
+ color: black; 
+ background-color: #FBD533 !important; 
+}
+
+#footer  /* Optional I moved the footer to be more consistent with our look. */
+{ 
+ margin: 0px auto !important;
+}
+
+.forgot_password_link  /* Optional I hide the Forgot your Password link because we are using LDAP. We are still discussing whether or not this is a good idea. This means that anyone with a canvas internal account won't be able to change their password. */
+{
+ display: none;
+}
+
+#modal-box h2 /* Optional login-bg.jpg is also used on the confirm registration page. Our logo is in the upper left and the text on the page overlapped it so I moved the whole registration form down.*/
+{
+ margin: 55px 10px 0;
+}
+
+body.modal #modal-box.login-box h1 { background: none; }
+
+body.modal #modal-box.login-box { 
+  height: 344px;
+  width: 640px;
+}
+
+body.modal #modal-box body.modal #login-box .button { 
+  background-color: #64B9F9;
+  border-color: #B85346;
+  background-image: none;
+  color: #FFF;
+  font-weight: 800;
+}
+
+body.modal #modal-box.login-box a { color: #FBD533 !important; /* #FFCF00 !important */ }
